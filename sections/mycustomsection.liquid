@@ -1,0 +1,162 @@
+<style>
+    /* Overall container styles */
+  #container {
+      padding: 2%;
+      margin: 3%;
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      border-radius: 20px;
+      background-color: #f0f0f0; /* Light gray background */
+  }
+
+  /* Left container */
+  #container-1 {
+      padding: 10%;
+      width: 50%;
+  }
+
+  /* Right container */
+  #container-2 {
+      width: 50%;
+  }
+
+  /* Styling for each image-text section */
+  #img-text-1,
+  #img-text-2 {
+      display: flex;
+      align-items: center; /* Center align items vertically */
+      margin-bottom: 20px; /* Add some space between sections */
+  }
+
+  /* Common styles for content blocks */
+  #content-1,
+  #content-2,
+  #content-3,
+  #content-4 {
+      display: inline-flex;
+      align-items: center; /* Center align items vertically */
+      margin-bottom: 10px; /* Add some space between content blocks */
+  }
+
+  /* Additional style for even content blocks to create staggered effect */
+  #content-2,
+  #content-4 {
+      margin-left: 20%;
+  }
+
+  img {
+      height: 100%;
+      width: 100%;
+      margin-right: 10px;
+  }
+
+  /* Style for text */
+  p {
+      margin: 0;
+      font-family: Arial, sans-serif;
+  }
+  /* Button styles */
+  #btn {
+      margin-top: 20px; /* Add some space between the content and the button */
+      text-align: left; /* Center align the button */
+  }
+
+  #btn a {
+      display: inline-block;
+      padding: 10px 20px; /* Add padding to make the button larger */
+      background-color: #007bff; /* Blue color for the button */
+      color: #fff; /* White text color */
+      text-decoration: none; /* Remove underline */
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  #btn a:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+  }
+
+
+  /* Responsive adjustments */
+  @media only screen and (max-width: 768px) {
+      #container {
+          flex-direction: column;
+      }
+      #container-1,
+      #container-2 {
+          width: 100%;
+      }
+      #content-2,
+      #content-4 {
+          margin-left: 0;
+      }
+      #btn {
+          text-align: center; /* Center align the button */
+      }
+  }
+</style>
+
+<div id="container">
+  {% assign img = section.settings.iconsall %}
+  <div id="container-1">
+    <div id="heading">
+      <h2>Secure Your Charge, Unlock Serenity</h2>
+    </div>
+
+    <div id="content">
+      <div id="img-text-1">
+        <div id="content-1">
+          <img src="{{ img }}" style="height: 20px;width: 20px;">
+          <p>my name is saad</p>
+        </div>
+        <div id="content-2">
+          <img src="{{ img }}" style="height: 20px;width: 20px;">
+          <p>my name is saad</p>
+        </div>
+      </div>
+
+      <div id="img-text-2">
+        <div id="content-3">
+          <img src="{{ img }}" style="height: 20px;width: 20px;">
+          <p>my name is saad</p>
+        </div>
+        <div id="content-4">
+          <img src="{{ img }}" style="height: 20px;width: 20px;">
+          <p>my name is saad</p>
+        </div>
+      </div>
+      <div id="btn">
+        <a href="#"> Buy Now </a>
+      </div>
+    </div>
+  </div>
+  {% assign banner-image1 = section.settings['banner-image'] %}
+  <div id="container-2">
+    <img src="{{  banner-image1 }}" alt="banner">
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Section name",
+   "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "iconsall",
+
+      "label": "Icons"
+    },{
+      "type": "image_picker",
+      "id": "banner-image",
+
+      "label": "Banner-Image"
+    }
+  ],
+  "presets": [
+  {
+    "name": "t:sections.apps.presets.name"
+  }
+]
+}
+{% endschema %}
