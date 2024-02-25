@@ -1,6 +1,91 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<style>
+    .offer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
+
+  .product-image {
+    max-width: 100px; /* Adjust according to your design */
+    max-height: 100px; /* Adjust according to your design */
+    margin-right: 20px; /* Add space between image and quantity selector */
+  }
+
+  .quantity-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .quantity-input {
+    width: 40px; /* Adjust width as needed */
+    text-align: center;
+  }
+
+  .add-to-cart-btn {
+    padding: 10px 20px; /* Adjust padding */
+    background-color: #ff6600; /* Adjust button color */
+    color: #fff; /* Adjust text color */
+    border: none;
+    cursor: pointer;
+  }
+</style>
+
+<div id="offer" class="offer">
+  <img src="{{ section.settings.product_image | img_url: 'master' }}" alt="Product Image" class="product-image">
+  <div class="quantity-selector">
+    <button class="quantity-decrease">-</button>
+    <input type="number" class="quantity-input" value="1">
+    <button class="quantity-increase">+</button>
+  </div>
+  <button class="add-to-cart-btn">Add to Cart</button>
+</div>
+<script>
+    $(document).ready(function() {
+    // Increase Quantity
+    $('.quantity-increase').click(function() {
+      var input = $(this).siblings('.quantity-input');
+      var newValue = parseInt(input.val()) + 1;
+      input.val(newValue);
+    });
+
+    // Decrease Quantity
+    $('.quantity-decrease').click(function() {
+      var input = $(this).siblings('.quantity-input');
+      var newValue = parseInt(input.val()) - 1;
+      if (newValue >= 1) {
+        input.val(newValue);
+      }
+    });
+
+    // Add to Cart
+    $('.add-to-cart-btn').click(function() {
+      var quantity = $(this).siblings('.quantity-selector').find('.quantity-input').val();
+      // Use Shopify AJAX API to add product to cart
+      // Example: Shopify.addItem(productId, quantity);
+    });
+  });
+</script>
+{% schema %}
+{
+  "name": "Add Product",
+  "settings": [
+    {
+          "type": "product",
+        "id": "product",
+        "label": "Product-Handle"
+        },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Products",
+      "name": "Add Product"
+    }
+  ]
+}
 {% endschema %}
