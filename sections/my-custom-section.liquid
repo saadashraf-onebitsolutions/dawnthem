@@ -1,0 +1,291 @@
+<style>
+        #featured-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Center align on all devices */
+          padding: 0rem 20px; /* Add padding to the container */
+          margin-top:5rem;
+        }
+
+        #line-1 {
+          display: flex;
+          justify-content: space-between;
+          align-items: center; /* Center align vertically */
+          width: 100%; /* Ensure line-1 takes full width */
+          margin-bottom: 20px; /* Add margin bottom */
+        }
+
+        #line-1 h2 {
+          margin: 0; /* Remove default margin */
+        }
+
+        .shop-all-btn {
+           color: #393939; /* Set text color to #393939 */
+  -webkit-transition: color .1s linear; /* Apply transition for webkit browsers */
+  -moz-transition: color .1s linear; /* Apply transition for Firefox */
+  -o-transition: color .1s linear; /* Apply transition for Opera */
+  -ms-transition: color .1s linear; /* Apply transition for IE */
+  transition: color .1s linear; /* Apply transition for other browsers */
+          padding: 10px 20px; /* Add padding */
+        }
+
+        .pagination {
+          display: flex;
+          justify-content: flex-end; /* Align pagination to the right */
+        }
+
+        .pagination button {
+          border: 1px solid #000000; /* Black border with 1px width */
+  background-color: transparent; /* Transparent background */
+  border-radius: 100%; /* 100% border radius */
+  padding: 10px; /* Add padding */
+  font-size: 1rem; /* Increase font size to make it larger */
+          margin-left: 10px; /* Add spacing between buttons */
+        }
+
+        #line-2 {
+          overflow: hidden;
+          width: 100%;
+        }
+
+        .product-slider {
+          display: flex;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+        }
+
+        .product-card {
+          flex: 0 0 auto;
+          scroll-snap-align: start;
+          margin-right: 20px;
+        }
+    product-slider {
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+    }
+
+    .product-slider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, and Opera */
+    }
+  .product-card img {
+      border: 2rem solid blue; /* Add a solid black border with a width of 3px */
+    }
+        /* Add media queries for responsiveness */
+        @media screen and (max-width: 768px) {
+          #line-1 {
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center align items */
+          }
+
+          .pagination {
+            display: none; /* Hide pagination on mobile devices */
+          }
+        }
+
+        /* Responsive styles for screen sizes between 1280px to 1980px */
+        @media screen and (min-width: 1380px) and (max-width: 1420px) {
+          #featured-container {
+            padding: 0 9%; /* Adjust padding for the container */
+          }
+        }
+      @media screen and (min-width: 1420px) and (max-width: 1480px) {
+          #featured-container {
+            padding: 0 11%; /* Adjust padding for the container */
+          }
+        }
+      @media screen and (min-width: 1481px) and (max-width: 1520px) {
+          #featured-container {
+            padding: 0 13%; /* Adjust padding for the container */
+          }
+        }
+      @media screen and (min-width: 1521px) and (max-width: 1680px) {
+          #featured-container {
+            padding: 0 15%; /* Adjust padding for the container */
+          }
+        }
+       @media screen and (min-width: 1681px) and (max-width: 1720px) {
+          #featured-container {
+            padding: 0 17%; /* Adjust padding for the container */
+          }
+        }
+       @media screen and (min-width: 1721px) and (max-width: 1880px) {
+          #featured-container {
+            padding: 0 19%; /* Adjust padding for the container */
+          }
+        }
+       @media screen and (min-width: 1881px) and (max-width: 2080px) {
+          #featured-container {
+            padding: 0 21%; /* Adjust padding for the container */
+          }
+        }
+
+
+
+        @media screen and (min-width: 2081px) and (max-width: 2120px) {
+          #featured-container {
+            padding: 0 23%; /* Adjust padding for the container */
+          }
+        }
+        @media screen and (min-width: 2121px) and (max-width: 2280px) {
+          #featured-container {
+            padding: 0 25%; /* Adjust padding for the container */
+          }
+        }
+
+        @media screen and (min-width: 2281px) and (max-width: 2320px) {
+          #featured-container {
+            padding: 0 27%; /* Adjust padding for the container */
+          }
+        }
+        @media screen and (min-width: 2321px) and (max-width: 2480px) {
+          #featured-container {
+            padding: 0 29%; /* Adjust padding for the container */
+          }
+        }
+
+    @media screen and (min-width: 2481px) and (max-width: 2540px) {
+      #featured-container {
+        padding: 0 31%; /* Adjust padding for the container */
+      }
+    }
+
+    @media screen and (min-width: 2541px) and (max-width: 2680px) {
+      #featured-container {
+        padding: 0 33%; /* Adjust padding for the container */
+      }
+    }
+
+    @media screen and (min-width: 2681px) and (max-width: 2720px) {
+      #featured-container {
+        padding: 0 35%; /* Adjust padding for the container */
+      }
+    }
+
+    @media screen and (min-width: 2721px) and (max-width: 2880px) {
+      #featured-container {
+        padding: 0 29%; /* Adjust padding for the container */
+      }
+    }
+    @media screen and (min-width: 2881px) and (max-width: 3920px) {
+      #featured-container {
+        padding: 0 31%; /* Adjust padding for the container */
+      }
+    }
+    @media screen and (min-width: 2921px) and (max-width: 3080px) {
+      #featured-container {
+        padding: 0 33%; /* Adjust padding for the container */
+      }
+    }
+    @media screen and (min-width: 3281px)and (max-width: 3646px){
+      #featured-container {
+        padding: 0 34%; /* Adjust padding for the container */
+      }
+    }
+    @media screen and (min-width: 3650px)and (max-width: 4200px){
+      #featured-container {
+        padding: 0 36%; /* Adjust padding for the container */
+      }
+    }
+
+    @media screen and (min-width: 4201px)and (max-width: 4680px){
+      #featured-container {
+        padding: 0 39%; /* Adjust padding for the container */
+      }
+    }
+    @media screen and (min-width: 4681px){
+      #featured-container {
+        padding: 0 39%; /* Adjust padding for the container */
+      }
+    }
+</style>
+
+{% assign heading = section.settings.heading %}
+{% assign btntext = section.settings.btntext %}
+{% assign collection = section.settings.collection %}
+
+<div id="featured-container">
+  <div id="line-1">
+    <!-- Line 1: Heading, "Shop All" button, and pagination -->
+    <h2>{{ heading }}</h2>
+    <a class="shop-all-btn" href="{{ section.settings.shop_all_url }}" style="color: black;">{{ btntext }}</a>
+    <!-- Use URL from schema settings -->
+    <div class="pagination">
+      <button class="prev-btn">&lt;</button>
+      <button class="next-btn">&gt;</button>
+    </div>
+  </div>
+  <div id="line-2">
+    <!-- Line 2: Collection products displayed with overflow hidden using a product slider -->
+    <div class="product-slider">
+      {% for product in collection.products %}
+        <div class="product-card">
+          <a
+            href="{{ product.url }}"
+            style="text-decoration: none; color: black; display: flex; flex-direction: column; align-items: center;"
+          >
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+            <h3 style="text-align: center; margin: 0.5rem; text-decoration: none; color: black;">
+              {{ product.title }}
+            </h3>
+            <p style="text-align: center; margin: 0.5rem; text-decoration: none; color: black;">
+              {{ product.price | money }}
+            </p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.next-btn').on('click', function () {
+      $('.product-slider').animate({
+        scrollLeft: '+=200'
+      }, 'fast'); // Faster animation
+    });
+
+    $('.prev-btn').on('click', function () {
+      $('.product-slider').animate({
+        scrollLeft: '-=200'
+      }, 'fast'); // Faster animation
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Featured Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "text",
+      "id": "btntext",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "shop_all_url",
+      "label": "Button Link"
+    },
+    {
+
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection List"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Featured Collection"
+    }
+  ]
+}
+{% endschema %}
