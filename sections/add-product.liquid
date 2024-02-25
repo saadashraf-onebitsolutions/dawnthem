@@ -32,7 +32,9 @@
 </style>
 
 <div id="offer" class="offer">
-  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+  {% if product %}
+    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
+  {% endif %}
   <div class="quantity-selector">
     <button class="quantity-decrease">-</button>
     <input type="number" class="quantity-input" value="1">
@@ -71,14 +73,9 @@
   "name": "Add Product",
   "settings": [
     {
-          "type": "product",
-        "id": "product",
-        "label": "Product-Handle"
-        },
-    {
-      "type": "image_picker",
-      "id": "product_image",
-      "label": "Product Image"
+      "type": "product",
+      "id": "product",
+      "label": "Product Handle"
     }
   ],
   "presets": [
