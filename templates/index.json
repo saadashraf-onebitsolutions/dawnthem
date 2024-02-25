@@ -119,8 +119,7 @@
     "add_product_pPqWwn": {
       "type": "add-product",
       "settings": {
-        "product": "gift-card",
-        "product_image": "shopify:\/\/shop_images\/unnamed_4_ee980c24-18c6-4455-920b-1de8f3e075b3.png"
+        "product": "permaplug-charger-lock"
       }
     }
   },
