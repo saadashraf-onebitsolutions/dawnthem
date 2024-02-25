@@ -115,12 +115,20 @@
         "shop_all_url": "shopify:\/\/collections\/all",
         "collection": "automated-collection"
       }
+    },
+    "add_product_pPqWwn": {
+      "type": "add-product",
+      "settings": {
+        "product": "gift-card",
+        "product_image": "shopify:\/\/shop_images\/unnamed_4_ee980c24-18c6-4455-920b-1de8f3e075b3.png"
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
     "collection_list_xaE9ij",
-    "my_custom_section_QBKrpr"
+    "my_custom_section_QBKrpr",
+    "add_product_pPqWwn"
   ]
 }
