@@ -121,6 +121,12 @@
       "settings": {
         "product": "permaplug-charger-lock"
       }
+    },
+    "addons_N9Vkmx": {
+      "type": "addons",
+      "settings": {
+        "show_product_recommendations": true
+      }
     }
   },
   "order": [
@@ -128,6 +134,7 @@
     "featured_collection",
     "collection_list_xaE9ij",
     "my_custom_section_QBKrpr",
-    "add_product_pPqWwn"
+    "add_product_pPqWwn",
+    "addons_N9Vkmx"
   ]
 }
