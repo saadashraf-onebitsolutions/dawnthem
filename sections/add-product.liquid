@@ -32,7 +32,7 @@
 </style>
 
 <div id="offer" class="offer">
-  <img src="{{ section.settings.product_image | img_url: 'master' }}" alt="Product Image" class="product-image">
+  <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
   <div class="quantity-selector">
     <button class="quantity-decrease">-</button>
     <input type="number" class="quantity-input" value="1">
