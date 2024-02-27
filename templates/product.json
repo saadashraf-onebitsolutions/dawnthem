@@ -27,23 +27,12 @@
             "swatch_shape": "square"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
-        "custom_liquid_jVTbmW": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>.custom-checkbox:hover.custom-checkbox:after,.custom-checkbox:after{box-shadow:none}.custom-checkbox{align-items: center}<\/style>\n<div class=\"field custom-checkbox\"> \n    <input type=\"checkbox\" name=\"properties[{{ product.title }}]\"form=\"{{ 'product-form-' | append: section.id }}\" value=\"Yes\" id=\"{{-product.title-}}\" required>\n    <label style=\"margin-left: 5px;margin-bottom: 0;\" class=\"form__label\" for=\"{{-product.title-}}\">{{ product.title }}<\/label><br>\n    <script>\n    document.addEventListener(\"DOMContentLoaded\", ()=>{document.querySelector(\"form[novalidate]\").removeAttribute(\"novalidate\")})\n    <\/script>\n<\/div>"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true,
-            "text4": "Add some more text here."
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "text4": "<p style=\"text-align:center;font-size:12px;margin-top:0px;\"> <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0680\/0516\/7405\/files\/shippingicondesktop_02448f1a-cc38-452e-8e23-57384e56d248.webp?v=1708712071\" style=\"width:16px;height:12px;\"> <strong>Ships from Dallas within 24 Hours<\/strong><\/p>"
           }
         },
         "description": {
@@ -92,8 +81,6 @@
         "title",
         "price",
         "variant_picker",
-        "quantity_selector",
-        "custom_liquid_jVTbmW",
         "buy_buttons",
         "description",
         "complementary_4xeifw",
@@ -101,10 +88,9 @@
         "popup_qwpCBq"
       ],
       "custom_css": [
-        ".ymq-option-title {font-size: 16px; }",
-        ".price-item{font-size:23px; font-weight:600;}",
-        ".price--on-sale .price-item--regular {font-size: 0; display: flex;}",
-        "@media screen and (min-width: 750px) {.section-template--22089304834349__main-padding {margin-right: -15rem;}"
+        ".ymq-option-title {font-size: 16px;}",
+        ".price-item {font-size: 23px; font-weight: 600;}",
+        ".price--on-sale .price-item--regular {font-size: 0; display: flex;}"
       ],
       "settings": {
         "enable_sticky_info": true,
