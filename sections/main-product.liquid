@@ -321,7 +321,7 @@
          font-size: 2vw;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper ..product-popup-modal__button {
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 3vw;
          margin-right: 4vw;
        }
@@ -330,7 +330,7 @@
      @media(min-width: 768px) {
        .theridge-witk_v1__wrapper {
          padding: 10px 5px;
-         width: auto;
+         width: autol
        }
        .theridge-witk_v1__container .theridge-witk_v1__header {
          font-size: 17px;
@@ -967,23 +967,24 @@
                           <div class="theridge-witk_v1__warranty-text">FREE REPLACEMENTS</div>
                           <div class="theridge-witk_v1__warranty-included">INCLUDED</div>
                         </div>
-                      </div>
-                      <modal-opener
-                        class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-                        data-modal="#PopupModal-{{ block.id }}"
-                        {{ block.shopify_attributes }}
-                      >
-                        <button
-                          id="ProductPopup-{{ block.id }}"
-                          class="product-popup-modal__button link"
-                          type="button"
-                          aria-haspopup="dialog"
+                      </div
+                         <modal-opener
+                          class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                          data-modal="#PopupModal-{{ block.id }}"
+                          {{ block.shopify_attributes }}
                         >
-                          {{ block.settings.text | default: block.settings.page.title | escape }}
-                        </button>
-                      </modal-opener>
+                          <button
+                            id="ProductPopup-{{ block.id }}"
+                            class="product-popup-modal__button link"
+                            type="button"
+                            aria-haspopup="dialog"
+                          >
+                            {{ block.settings.text | default: block.settings.page.title | escape }}
+                          </button>
+                        </modal-opener>
                       <div class="theridge-witk_v1__warranty-modal">
-                        <a href="{{ block.settings.page.url }}" class="theridge-witk_v1__warranty-modal no-js">
+                       
+                        <a href="{{ block.settings.page.url }}" class=" link no-js">
                           {{- block.settings.text -}}
                         </a>
                       </div>
