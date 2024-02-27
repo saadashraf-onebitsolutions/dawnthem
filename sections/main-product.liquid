@@ -66,6 +66,7 @@
        grid-template-columns: 1fr 1fr 1fr;
        grid-template-rows: auto;
        align-items: center;
+       width: 100%;
        /* Height must be specific for mobile */
 
        column-gap: 5px;
@@ -179,7 +180,7 @@
        font-weight: 400;
      }
 
-     .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+     .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
        color: #827E6D;
        font-family: "Roboto";
        font-weight: 500;
@@ -249,7 +250,7 @@
          font-size: 11px;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 14px;
          margin-right: 10px;
        }
@@ -284,7 +285,7 @@
          font-size: 11px;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 14px;
          margin-right: 15px;
        }
@@ -321,7 +322,7 @@
          font-size: 2vw;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 3vw;
          margin-right: 4vw;
        }
@@ -330,7 +331,6 @@
      @media(min-width: 768px) {
        .theridge-witk_v1__wrapper {
          padding: 10px 5px;
-         width: autol
        }
        .theridge-witk_v1__container .theridge-witk_v1__header {
          font-size: 17px;
@@ -368,7 +368,7 @@
          font-size: 8px;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 7px;
          margin-right: 0px;
        }
@@ -411,7 +411,7 @@
          margin-top: 3px;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 8px;
          margin-right: 0px;
        }
@@ -457,7 +457,7 @@
          font-size: 9px;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 10px;
          margin-right: 15px;
        }
@@ -502,7 +502,7 @@
          margin-top: 0;
        }
 
-       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal a{
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
          font-size: 13px;
          margin-right: 18px;
        }
@@ -967,8 +967,9 @@
                           <div class="theridge-witk_v1__warranty-text">FREE REPLACEMENTS</div>
                           <div class="theridge-witk_v1__warranty-included">INCLUDED</div>
                         </div>
-                      </div
-                         <modal-opener
+                      </div>
+                      <div class="theridge-witk_v1__warranty-modal">
+                        <modal-opener
                           class="product-popup-modal__opener no-js-hidden quick-add-hidden"
                           data-modal="#PopupModal-{{ block.id }}"
                           {{ block.shopify_attributes }}
@@ -982,9 +983,7 @@
                             {{ block.settings.text | default: block.settings.page.title | escape }}
                           </button>
                         </modal-opener>
-                      <div class="theridge-witk_v1__warranty-modal">
-                       
-                        <a href="{{ block.settings.page.url }}" class=" link no-js">
+                        <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
                           {{- block.settings.text -}}
                         </a>
                       </div>
