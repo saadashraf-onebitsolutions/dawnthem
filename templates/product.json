@@ -11,7 +11,9 @@
         "sku_DpJkBk": {
           "type": "sku",
           "settings": {
-            "text_style": "body"
+            "text_style": "body",
+            "text1": "How It Works",
+            "page1": "contact"
           }
         },
         "price": {
