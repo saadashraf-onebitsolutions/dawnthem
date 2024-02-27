@@ -1,28 +1,27 @@
 <style>
    /* Style for popup container */
+    /* Style for popup image container */
   .popup-container {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
-    max-width: 100%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999; /* Adjusted z-index to a higher value */
+    z-index: 9999;
   }
-
 
   /* Style for popup image */
   .popup-image {
     display: block;
     margin: auto;
-    width: 450px;
-    height: 450px;
+    max-width: 80%;
+    max-height: 80%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10000; /* Adjusted z-index to be higher than the popup container */
   }
 
   /* Style for close button */
@@ -33,7 +32,7 @@
     cursor: pointer;
     color: #fff;
     font-size: 20px;
-    z-index: 10001; /* Adjusted z-index to be higher than the popup image */
+    z-index: 10000;
   }
 </style>
 
@@ -41,25 +40,22 @@
 <button onclick="openPopup()">Open Popup Image</button>
 
 <!-- Popup container -->
-<div class="popup-container" id="popupContainer" onclick="closePopup()">
-  <!-- Popup image -->
-  <img
-    src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/BUNDLE_SAVE_PERMAPLUG_POP_UP_1.png?v=1708516607"
-    alt="Popup Image"
-    class="popup-image"
-  >
-  <!-- Close button -->
-  <span class="close-btn">&times;</span>
+<div class="popup-container">
+  <button id="open-popup">Open Popup</button>
+  <div class="popup-content">
+    <img src="{{ image_url }}" alt="Popup Image">
+    <button id="close-popup">Close</button>
+  </div>
 </div>
 
 <script>
-  // Function to open popup
-  function openPopup() {
-    document.getElementById("popupContainer").style.display = "block";
-  }
+  $(document).ready(function() {
+    $('#open-popup').click(function() {
+      $('.popup-content').fadeIn();
+    });
 
-  // Function to close popup
-  function closePopup() {
-    document.getElementById("popupContainer").style.display = "none";
-  }
+    $('#close-popup').click(function() {
+      $('.popup-content').fadeOut();
+    });
+  });
 </script>
