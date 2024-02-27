@@ -1,6 +1,6 @@
 <style>
-  /* Style for popup container */
-  .popup-container {
+    /* Style for popup container */
+    .popup-container {
     display: none;
     position: fixed;
     top: 0;
@@ -8,31 +8,32 @@
     width: 100%;
     height: 60%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2147483646;
+    z-index: 9999; /* Adjusted z-index to a higher value */
   }
 
-  /* Style for popup image */
-  .popup-image {
-    display: block;
-    margin: auto;
-    width: 450px;
-    height: 450px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 
-  /* Style for close button */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 20px;
-    z-index: 10000;
-  }
+    /* Style for popup image */
+    .popup-image {
+      display: block;
+      margin: auto;
+      width: 450px;
+      height: 450px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* Style for close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      z-index: 10000;
+    }
 </style>
 
 <!-- Button to trigger popup image -->
