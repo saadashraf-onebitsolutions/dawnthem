@@ -3,11 +3,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
+        "sku_DpJkBk": {
+          "type": "sku",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text_style": "body"
           }
         },
         "title": {
@@ -80,7 +79,7 @@
         }
       },
       "block_order": [
-        "vendor",
+        "sku_DpJkBk",
         "title",
         "price",
         "variant_picker",
