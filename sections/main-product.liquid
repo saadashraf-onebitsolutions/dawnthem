@@ -19,278 +19,279 @@
   {%- endif -%}
 
   {%- style -%}
-                                                          .section-{{ section.id }}-padding {
-                                                            padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-                                                            padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-                                                          }
-
-                                                          @media screen and (min-width: 750px) {
                                                             .section-{{ section.id }}-padding {
-                                                              padding-top: {{ section.settings.padding_top }}px;
-                                                              padding-bottom: {{ section.settings.padding_bottom }}px;
+                                                              padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+                                                              padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
                                                             }
-                                                          }
 
-                                                     /* Default styles */
-                            .thumbnail {
-                          border-radius: 100%;
-                        }
-                                                  #container {
+                                                            @media screen and (min-width: 750px) {
+                                                              .section-{{ section.id }}-padding {
+                                                                padding-top: {{ section.settings.padding_top }}px;
+                                                                padding-bottom: {{ section.settings.padding_bottom }}px;
+                                                              }
+                                                            }
 
-                                                    margin-top: -3rem;
+                                                       /* Default styles */
+                              .thumbnail {
+                            border-radius: 100%;
+                          }
+                                                    #container {
 
-                                                  }
+                                                      margin-top: -3rem;
 
-                                                  #container1 {
-                                                      display: flex;
-                                                      flex-direction: row;
-                                                      gap: 1.5rem;
-                                                      text-align: center;
-                                                      background-color: #E0DFDA;
+                                                    }
+
+                                                    #container1 {
+                                                        display: flex;
+                                                        flex-direction: row;
+                                                        gap: 1.5rem;
+                                                        text-align: center;
+                                                        background-color: #E0DFDA;
+                                                        width: 440px;
+                                                        padding: 1rem;
+
+                                                      margin-top: -2rem;
+                                                    }
+
+                                                    #container1 img {
+                                                        height: 100px;
+                                                        width: 100px;
+                                                        margin: 0;
+                                                        padding: 0;
+                                                    }
+
+                                                    #title1,
+                                                    #title2,
+                                                    #title3 {
                                                       width: 440px;
-                                                      padding: 1rem;
+                                                         border-top-left-radius: 20px;
+                                                      border-top-right-radius: 20px;
+                                                        background-color: #D2D0CA;
+                                                        margin: 0rem 0rem;
+                                                      margin-bottom:1rem;
 
-                                                    margin-top: -2rem;
-                                                  }
+                                                    }
 
-                                                  #container1 img {
-                                                      height: 100px;
-                                                      width: 100px;
-                                                      margin: 0;
-                                                      padding: 0;
-                                                  }
+                                                    #title-img1,
+                                                    #title-img2,
+                                                    #title-img3 {
+                                                        background-color: #F2F2F2;
+                                                        padding: 0.5rem;
+                                                      margin: 2px;
+                                                      height:14rem;
 
-                                                  #title1,
-                                                  #title2,
-                                                  #title3 {
-                                                    width: 440px;
-                                                       border-top-left-radius: 20px;
-                                                    border-top-right-radius: 20px;
-                                                      background-color: #D2D0CA;
-                                                      margin: 0rem 0rem;
-                                                    margin-bottom:1rem;
+                                                    }
 
-                                                  }
+                                                    #info {
+                                                        display: flex;
+                                                        flex-direction: row;
+                                                        gap: 0.5rem;
+                                                        text-align: center;
 
-                                                  #title-img1,
-                                                  #title-img2,
-                                                  #title-img3 {
-                                                      background-color: #F2F2F2;
-                                                      padding: 0.5rem;
-                                                    margin: 2px;
-                                                    height:14rem;
+                                                         background-color: #f3f3f3;
+                                                        border: 2px solid #D2D0CA;
+                                                        width: 440px;
+                                                        margin: -2rem 0px 0px 0px;
 
-                                                  }
-
-                                                  #info {
-                                                      display: flex;
-                                                      flex-direction: row;
-                                                      gap: 0.5rem;
-                                                      text-align: center;
-
-                                                       background-color: #f3f3f3;
-                                                      border: 2px solid #D2D0CA;
-                                                      width: 440px;
-                                                      margin: -2rem 0px 0px 0px;
-
-                                                  }
+                                                    }
 
 
 
+                                                    #info img {
+                                                      height: 40px;
+                                                      width: 40px;
+                                                      margin-top: 1.5rem;
+                                                      margin-left: 1rem;
+                                                    }
+
+                                                    #head-text {
+                                                        text-align: left;
+                                                        display: block;
+                                                        font-size: 15px;
+                                                        margin-left: 1rem;
+                                                         margin-top: -0.6rem;
+                                                    }
+
+                                                    #container2 {
+                                                        display: flex;
+                                                        align-items: center;
+                                                        flex-direction: row;
+                                                        gap: 0.5rem;
+                                                        text-align: center;
+                                                        background-color: #E0DFDA;
+                                                        width: 440px;
+                                                        padding: 1rem;
+
+                                                    }
+
+                                        #info modal-opener button {
+                                        margin-left: 9rem;
+                                          margin-top: 1rem;
+                                           color: #8F8876;
+                                       font-size: 13px
+                                    }
+                           #title1 p,  #title2 p ,#title3 p {
+
+                                      font-size:12px;
+                             line-height: 10px;
+
+                              font-weight:  Bold;
+                             color: #8F8876;
+                                    }
+                                    #title-img1 p,  #title-img2 p,#title-img3 p{
+
+                                     font-size:12px;
+
+                               font-weight:  Bold;
+                                      color: #8F8876;
+                                    }
+                    .ymq-options-button-input:checked+label {
+                    color: var(--button-font-checked-color);
+                    background: #6D69E9;
+                }
+                #head-text p strong{
+                                                    font-size:18px;
+                                                }
+
+                                               only screen and (min-width:321px) and (max-width:768px){
+                                                #container1 {
+
+                                                     height: auto;
+                                                }
+
+                                                #container2 {
+
+                                                    height: auto;
+                                                }
+
+                                                #info {
+
+                                                    height: auto;
+
+
+                                                  padding: 0.5rem;
+                                                }
                                                   #info img {
                                                     height: 40px;
-                                                    width: 40px;
-                                                    margin-top: 1.5rem;
-                                                    margin-left: 1rem;
-                                                  }
-
-                                                  #head-text {
-                                                      text-align: left;
-                                                      display: block;
-                                                      font-size: 15px;
+                                                      width: 40px;
+                                                      margin-top: 1rem;
                                                       margin-left: 1rem;
-                                                       margin-top: -0.6rem;
-                                                  }
 
-                                                  #container2 {
-                                                      display: flex;
-                                                      align-items: center;
-                                                      flex-direction: row;
-                                                      gap: 0.5rem;
-                                                      text-align: center;
-                                                      background-color: #E0DFDA;
-                                                      width: 440px;
-                                                      padding: 1rem;
+                                                }
+                                                   #head-text strong{
+                                                    font-size:8px;
+                                                }
 
-                                                  }
+                                                #container1 img {
+                                                    height: 70px;
+                                                    width: 70px;
+                                                    margin: 0;
+                                                    padding: 0;
+                                                }
 
-                                      #info modal-opener button {
-                                      margin-left: 9rem;
-                                        margin-top: 1rem;
-                                         color: #8F8876;
-                                     font-size: 13px
-                                  }
-                         #title1 p,  #title2 p ,#title3 p {
+                                                #title1,
+                                                #title2,
+                                                #title3 {
 
-                                    font-size:12px;
-                           line-height: 10px;
+                                                    background-color: #d2d0ca;
+                                                   margin: 1.2rem 0rem;
+                                                }
 
-                            font-weight:  Bold;
-                           color: #8F8876;
-                                  }
-                                  #title-img1 p,  #title-img2 p,#title-img3 p{
+                    #info modal-opener button {
+                          margin-left: 5rem;
+                        }
 
-                                   font-size:12px;
-
-                             font-weight:  Bold;
-                                    color: #8F8876;
-                                  }
-                  .ymq-options-button-input:checked+label {
-                  color: var(--button-font-checked-color);
-                  background: #6D69E9;
-              }
-              #head-text p strong{
-                                                  font-size:18px;
-                                              }
-
-                                             only screen and (min-width:321px) and (max-width:768px){
-                                              #container1 {
-
-                                                   height: auto;
-                                              }
-
-                                              #container2 {
-
-                                                  height: auto;
-                                              }
-
-                                              #info {
-
-                                                  height: auto;
-
-
-                                                padding: 0.5rem;
-                                              }
-                                                #info img {
-                                                  height: 40px;
-                                                    width: 40px;
-                                                    margin-top: 1rem;
-                                                    margin-left: 1rem;
-
-                                              }
-                                                 #head-text strong{
-                                                  font-size:8px;
-                                              }
-
-                                              #container1 img {
-                                                  height: 70px;
-                                                  width: 70px;
-                                                  margin: 0;
-                                                  padding: 0;
-                                              }
-
-                                              #title1,
-                                              #title2,
-                                              #title3 {
-
-                                                  background-color: #d2d0ca;
-                                                 margin: 1.2rem 0rem;
-                                              }
-
+                                            }
+                @media only screen and (max-width: 600px) {
                   #info modal-opener button {
-                        margin-left: 5rem;
-                      }
+                          margin-left: 10rem;
+                        }
+                }
 
-                                          }
-              @media only screen and (max-width: 600px) {
-                #info modal-opener button {
-                        margin-left: 10rem;
-                      }
-              }
+                                                   @media only screen and (max-width: 480px) {
+                                               #container1,
+                        #container2 {
+                          width: auto;
+                          height: auto;
+                        }
 
-                                                 @media only screen and (max-width: 480px) {
-                                             #container1,
-                      #container2 {
-                        width: auto;
-                        height: auto;
-                      }
+                        #info {
+                          width: 468px;
+                          height: auto;
+                          padding: 0.5rem;
+                        }
 
-                      #info {
-                        width: 468px;
-                        height: auto;
-                        padding: 0.5rem;
-                      }
+                        #info img {
+                          height: 40px;
+                          width: 40px;
+                          margin-top: 1rem;
+                          margin-left: 1rem;
+                        }
 
-                      #info img {
-                        height: 40px;
-                        width: 40px;
-                        margin-top: 1rem;
-                        margin-left: 1rem;
-                      }
+                        #head-text strong {
+                          font-size: 18px;
+                        }
 
-                      #head-text strong {
-                        font-size: 18px;
-                      }
+                        #container1 img {
+                          height: 70px;
+                          width: 70px;
+                          margin: 0;
+                          padding: 0;
+                        }
 
-                      #container1 img {
-                        height: 70px;
-                        width: 70px;
-                        margin: 0;
-                        padding: 0;
-                      }
+                        #title1,
+                        #title2,
+                        #title3 {
+                          width: 360px;
+                          background-color: #d2d0ca;
+                          margin: 1.2rem 0rem;
+                        }
 
-                      #title1,
-                      #title2,
-                      #title3 {
-                        width: 360px;
-                        background-color: #d2d0ca;
-                        margin: 1.2rem 0rem;
-                      }
+                        #title1 p,
+                        #title2 p,
+                        #title3 p,
+                        #title-img1 p,
+                        #title-img2 p,
+                        #title-img3 p {
+                          font-size: 8px;
+                        }
 
-                      #title1 p,
-                      #title2 p,
-                      #title3 p,
-                      #title-img1 p,
-                      #title-img2 p,
-                      #title-img3 p {
-                        font-size: 8px;
-                      }
+                        #info modal-opener button {
+                          margin-left: 1rem;
+                        }
+                                                      #title-img1,
+                                                    #title-img2,
+                                                    #title-img3 {
+                                                        height:12rem;
+                                                    }
 
-                      #info modal-opener button {
-                        margin-left: 1rem;
-                      }
-                                                    #title-img1,
-                                                  #title-img2,
-                                                  #title-img3 {
-                                                      height:12rem;
-                                                  }
+                                                }
+                 @media only screen and (max-width: 390px) {
 
-                                              }
-               @media only screen and (max-width: 390px) {
-
-                #info img {
-              height: 35px;
-              width: 30px;
-              margin-top: 1rem;
-              margin-left: 0rem;
-          }
-                #info modal-opener button {
-              font-size: 10px;
-
-                        margin-left: 4rem;
+                  #info img {
+                height: 35px;
+                width: 30px;
+                margin-top: 1rem;
+                margin-left: 0rem;
             }
-                 #head-text p strong{
-                                                  font-size: 14px;
-                                              }
-      .ymq_alert_box2 {
-          left: 18.9rem;
-      }
+                  #info modal-opener button {
+                font-size: 10px;
 
-               }
+                          margin-left: 4rem;
+              }
+                   #head-text p strong{
+                                                    font-size: 14px;
+                                                }
+        .ymq_alert_box2 {
+            left: 18.9rem;
+        }
+
+                 }
 
 
 
-      /* Style for popup image container */
+
+       /* Style for popup container */
     .popup-container {
       display: none;
       position: fixed;
@@ -306,8 +307,8 @@
     .popup-image {
       display: block;
       margin: auto;
-      max-width: 80%;
-      max-height: 80%;
+      width: 450px;
+      height: 450px;
       position: absolute;
       top: 50%;
       left: 50%;
