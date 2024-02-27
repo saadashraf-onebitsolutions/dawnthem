@@ -474,12 +474,21 @@
                       type="button"
                       aria-haspopup="dialog"
                       style="color: black; font-weight:bold; margin-left: 21rem; margin-top: 0.67rem;"
+                      onclick="openPopup('{{ block.id }}')"
                     >
                       {{ link_text }}
                     </button>
                   </modal-opener>
                   <a href="{{ page_url }}" class="product-popup-modal__button link no-js">{{ link_text }}</a>
                 </div>
+
+                <script>
+                  // Function to open popup
+                  function openPopup(blockId) {
+                    var popupContainer = document.getElementById("PopupModal-" + blockId);
+                    popupContainer.style.display = "block";
+                  }
+                </script>
 
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
