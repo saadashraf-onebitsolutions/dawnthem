@@ -73,7 +73,7 @@
           "type": "popup",
           "settings": {
             "text": "Learn More",
-            "page": ""
+            "page": "contact"
           }
         }
       },
