@@ -24,7 +24,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "swatch_shape": "circle"
+            "swatch_shape": "square"
           }
         },
         "quantity_selector": {
@@ -42,7 +42,8 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_gift_card_recipient": true,
+            "text4": "Add some more text here."
           }
         },
         "description": {
@@ -73,7 +74,16 @@
           "type": "popup",
           "settings": {
             "text": "Learn More",
-            "page": "contact"
+            "page": "contact",
+            "heading11": "WHAT'S INCLUDED?",
+            "headingtext11": "INCLUDED",
+            "imgheadingtext11": "LOCKING COVER",
+            "headingtext22": "INCLUDED",
+            "imgheadingtext22": "DUAL FAST CHARGER",
+            "headingtext33": "INCLUDED",
+            "imgheadingtext33": "APPLE CHARGER",
+            "headingtext44": "FREE REPLACEMENT",
+            "imgheadingtext44": "INCLUDED"
           }
         }
       },
