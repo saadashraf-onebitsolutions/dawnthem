@@ -113,6 +113,7 @@
     },
     "related-products": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
@@ -128,10 +129,20 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "my_custom_section_HG68JW": {
+      "type": "my-custom-section",
+      "settings": {
+        "heading": "YOU MAY ALSO LIKE",
+        "btntext": "SHOP ALL",
+        "shop_all_url": "shopify:\/\/collections\/all",
+        "collection": "automated-collection"
+      }
     }
   },
   "order": [
     "main",
-    "related-products"
+    "related-products",
+    "my_custom_section_HG68JW"
   ]
 }
