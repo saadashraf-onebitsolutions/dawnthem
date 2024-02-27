@@ -85,7 +85,7 @@
   {%- elsif picker_type == 'button' -%}
     <input
       type="radio"
-      id="{{ input_id }}-{{ option.position }}-{{ forloop.index0 }}"
+      id="{{ input_id }}"
       name="{{ option.name }}"
       value="{{ value | escape }}"
       form="{{ product_form_id }}"
@@ -96,21 +96,10 @@
         class="disabled"
       {% endif %}
     >
-    {% if product.variants[forloop.index0].image != blank %}
-      <label
-        for="{{ input_id }}-{{ option.position }}-{{ forloop.index0 }}"
-        style="background-image: url({{ product.variants.image | image_url: '' }}); "
-      >
-        {{ product.variants[forloop.index0].image | image_url: '' }}
-        {{ label_unavailable }}
-      </label>
-    {% else %}
-      <label for="{{ input_id }}-{{ option.position }}-{{ forloop.index0 }}">
-        {{ value -}}
-        {{ label_unavailable }}
-      </label>
-    {% endif %}
-
+    <label for="{{ input_id }}">
+      {{ value -}}
+      {{ label_unavailable }}
+    </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       value="{{ value | escape }}"
