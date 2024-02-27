@@ -51,11 +51,6 @@
             "imgheadingtext44": "INCLUDED"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
         "collapsible_tab_Mibz3U": {
           "type": "collapsible_tab",
           "settings": {
@@ -91,7 +86,6 @@
         "variant_picker",
         "buy_buttons",
         "popup_qwpCBq",
-        "description",
         "collapsible_tab_Mibz3U",
         "collapsible_tab_8jMQiP",
         "collapsible_tab_qqtEj8"
