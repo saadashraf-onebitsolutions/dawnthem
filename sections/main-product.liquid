@@ -450,38 +450,38 @@
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
-                <p
-                  class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
-                  id="Sku-{{ section.id }}"
-                  role="status"
-                  {{ block.shopify_attributes }}
-                  style="margin-top: -2rem;"
-                >
-                  <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
-
-                  PAT. #
-                  {{- product.selected_or_first_available_variant.sku -}}
-                </p>
-                {% assign link_text = block.settings.text1 | default: 'Pop-up link text' %}
-                {% assign page_url = block.settings.page1.url %}
-
-                <modal-opener
-                  class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-                  data-modal="#PopupModal-{{ block.id }}"
-                  {{ block.shopify_attributes }}
-                >
-                  <button
-                    id="ProductPopup-{{ block.id }}"
-                    class="product-popup-modal__button link"
-                    type="button"
-                    aria-haspopup="dialog"
+                <div id="sku-popup" style="display: flex; flex-direction: row;">
+                  <p
+                    class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
+                    id="Sku-{{ section.id }}"
+                    role="status"
+                    {{ block.shopify_attributes }}
+                    style="margin-top: -2rem;"
                   >
+                    <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
+                    PAT. #
+                    {{- product.selected_or_first_available_variant.sku -}}
+                  </p>
+                  {% assign link_text = block.settings.text1 | default: 'Pop-up link text' %}
+                  {% assign page_url = block.settings.page1.url %}
+                  <modal-opener
+                    class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                    data-modal="#PopupModal-{{ block.id }}"
+                    {{ block.shopify_attributes }}
+                  >
+                    <button
+                      id="ProductPopup-{{ block.id }}"
+                      class="product-popup-modal__button link"
+                      type="button"
+                      aria-haspopup="dialog"
+                    >
+                      {{ link_text }}
+                    </button>
+                  </modal-opener>
+                  <a href="{{ page_url }}" class="product-popup-modal__button link no-js">
                     {{ link_text }}
-                  </button>
-                </modal-opener>
-                <a href="{{ page_url }}" class="product-popup-modal__button link no-js">
-                  {{ link_text }}
-                </a>
+                  </a>
+                </div>
 
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
