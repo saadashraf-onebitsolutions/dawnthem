@@ -450,13 +450,12 @@
                   </div>
                 {%- endif -%}
               {%- when 'sku' -%}
-                <div id="sku-popup" style="display: flex; flex-direction: row;">
+                <div id="sku-popup" style="display: flex; flex-direction: row; margin-top: -2rem;">
                   <p
-                    class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}{% if product.selected_or_first_available_variant.sku.size == 0 %} visibility-hidden{% endif %}"
+                    class="product__sku no-js-hidden{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
                     id="Sku-{{ section.id }}"
                     role="status"
                     {{ block.shopify_attributes }}
-                    style="margin-top: -2rem;"
                   >
                     <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span>
                     PAT. #
@@ -478,9 +477,7 @@
                       {{ link_text }}
                     </button>
                   </modal-opener>
-                  <a href="{{ page_url }}" class="product-popup-modal__button link no-js">
-                    {{ link_text }}
-                  </a>
+                  <a href="{{ page_url }}" class="product-popup-modal__button link no-js">{{ link_text }}</a>
                 </div>
 
               {%- when 'custom_liquid' -%}
