@@ -1,17 +1,88 @@
 {{ 'component-image-with-text.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+      }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      @media screen and (min-width: 750px) {
+        .section-{{ section.id }}-padding {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+      }
+      p {
+      color: black;
     }
+    #section1 p {
+      text-align: center;
+      margin-top: -0.8rem;
+    }
+    #section1 {
+      text-align: center;
+      margin-top: 5rem;
+    }
+   #mytextp{
+      margin-top: 1rem;
+     margin-bottom: 1rem;
+    }
+    #mytextp p {
+      font-size:20px;
+    }
+  .image-with-text__heading{
+    font-size:41px;
   }
+  .button {
+    padding:20px;
+    width: 300px;
+    font-size:20px;
+    font-weight: bold;
+  }
+  #myimgimg1,
+#myimgimg2 {
+  margin-top: -7px;
+}
+#myimgimg3 {
+  margin-top: -1.5vh;
+}
+    @media only screen and (max-width: 750px) {
+      h2 {
+        font-size: 17px;
+      
+      }
+    
+      #section1 {
+        text-align: center;
+        margin-top: 1rem;
+      }
+      img {
+        height: 350px;
+      }
+      .image-with-text__media {
+        margin-bottom: -10rem;
+      }
+      #mytextp p{
+        font-size: 14px;
+        text-align: left;
+      }
+      .button {
+    width: 300px;
+  }
+       .image-with-text__heading{
+    font-size:20px;
+  }
+     #mytextp{
+      margin-top: 0rem;
+     margin-bottom: 0rem;
+    }
+      #myimgimg3 {
+    margin-top: -35px;
+  }
+     
+    
+    }
+
 {%- endstyle -%}
 
 {%- liquid
@@ -73,17 +144,56 @@
                   >
                     {{ block.settings.heading }}
                   </h2>
+                  <!-- <div id="mycaption"> -->
                 {%- when 'caption' -%}
                   <p
                     class="image-with-text__text image-with-text__text--caption {{ block.settings.text_style }} {{ block.settings.text_style }}--{{ block.settings.text_size }} {{ block.settings.text_style }}"
                     {{ block.shopify_attributes }}
                   >
-                    {{ block.settings.caption | escape }}
+<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Untitled_design_1.png?v=1707503403" style="width: 12px; height: 12px;"> 
+<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Untitled_design_1.png?v=1707503403" style="width: 12px; height: 12px;"> 
+<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Untitled_design_1.png?v=1707503403" style="width: 12px; height: 12px;"> 
+<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Untitled_design_1.png?v=1707503403" style="width: 12px; height: 12px;"> 
+<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Untitled_design_1.png?v=1707503403" style="width: 12px; height: 12px;">
+
+                
+                {{ block.settings.caption | escape }}
                   </p>
+                
                 {%- when 'text' -%}
-                  <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+              
+                
+     <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
                     {{ block.settings.text }}
+                <div id="mytextp">
+                  {% assign textt = block.settings.texttext %}
+   <div style="display: flex; align-items: center;">
+     <img id="myimgimg1" src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/check-circle-svgrepo-com_1.svg?v=1707560507" width="23" height="23" style="margin-right: 0.5rem;">
+    <p style="margin: 0;"> {{ textt }}</p>
+</div>
+                  {% assign texttt = block.settings.texttextt %}
+
+<div style="display: flex; align-items: center; ">
+  <img id="myimgimg2" src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/check-circle-svgrepo-com_1.svg?v=1707560507" width="23" height="23" style="margin-right: 0.5rem;">
+    <p style="margin: 0;">{{ texttt }}</p>
+</div>
+      {% assign textttt = block.settings.texttexttt %}
+
+<div style="display: inline-flex; align-items: center;">
+    <img id="myimgimg3" src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/check-circle-svgrepo-com_1.svg?v=1707560507" width="23" height="23" style="margin-right: 0.5rem;">
+    <p >
+        {{ textttt }}
+    </p>
+</div>
+             
+
+
+</div>
+               
+
+  
                   </div>
+                  <div id="section1">
                 {%- when 'button' -%}
                   {%- if block.settings.button_label != blank -%}
                     <a
@@ -97,6 +207,11 @@
                     >
                       {{ block.settings.button_label | escape }}
                     </a>
+
+                    {% assign text4 = block.settings.text4 %}
+                    <div id="text-below-button">
+                      <p>{{ text4 }}</p>
+                    </div>
                   {%- endif -%}
               {%- endcase -%}
             {%- endfor -%}
@@ -106,7 +221,7 @@
     </div>
   </div>
 </div>
-
+</div>
 {% schema %}
 {
   "name": "t:sections.image-with-text.name",
@@ -242,13 +357,13 @@
       "type": "color_scheme",
       "id": "section_color_scheme",
       "label": "t:sections.all.colors.label",
-      "default": "scheme-1"
+      "default": "background-1"
     },
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:sections.multirow.settings.container_color_scheme.label",
-      "default": "scheme-1"
+      "default": "background-1"
     },
     {
       "type": "header",
@@ -363,7 +478,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
+          "type": "html",
           "id": "caption",
           "default": "Add a tagline",
           "label": "t:sections.image-with-text.blocks.caption.settings.text.label"
@@ -412,9 +527,27 @@
       "limit": 1,
       "settings": [
         {
-          "type": "richtext",
+          "type": "html",
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "html",
+          "id": "texttext",
+          "default": "<p>Prevent charger & cable theft.</p>",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "html",
+          "id": "texttextt",
+          "default": "<p>Prevent accidental unplugs.</p>",
+          "label": "t:sections.image-with-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "html",
+          "id": "texttexttt",
+          "default": "<p>Prevent cable damage from snug fits behind furniture</p>",
           "label": "t:sections.image-with-text.blocks.text.settings.text.label"
         },
         {
@@ -441,7 +574,7 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
+          "type": "html",
           "id": "button_label",
           "default": "Button label",
           "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
@@ -456,25 +589,29 @@
           "type": "checkbox",
           "id": "button_style_secondary",
           "default": false,
-          "label": "t:sections.image-with-text.blocks.button.settings.outline_button.label"
+          "label": "Button Style Secondary"
+        },
+        {
+          "type": "html",
+          "id": "text4",
+          "default": "Add some more text here.",
+          "label": "Add some more text here."
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.image-with-text.presets.name",
-      "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "text"
-        },
-        {
-          "type": "button"
-        }
-      ]
+      "category": "t:sections.presets.categories.hero",
+      "name": "image-with-text",
+      "settings": {
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap"
+      }
     }
   ]
 }
