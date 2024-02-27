@@ -465,6 +465,9 @@
                 {% assign link_text = block.settings.text1 | default: 'Pop-up link text' %}
                 {% assign page_url = block.settings.page1.url %}
 
+                {% assign link_text = block.settings.text1 | default: 'Pop-up link text' %}
+                {% assign page_url = block.settings.page1.url %}
+
                 <modal-opener
                   class="product-popup-modal__opener no-js-hidden quick-add-hidden"
                   data-modal="#PopupModal-{{ block.id }}"
@@ -475,6 +478,7 @@
                     class="product-popup-modal__button link"
                     type="button"
                     aria-haspopup="dialog"
+                    onclick="openPopup('{{ block.id }}')"
                   >
                     {{ link_text }}
                   </button>
@@ -483,6 +487,25 @@
                   {{ link_text }}
                 </a>
 
+                <!-- Popup container -->
+                <div class="popup-container" id="PopupModal-{{ block.id }}" onclick="closePopup('{{ block.id }}')">
+                  <!-- Popup content -->
+                  <div class="popup-content">
+                    <!-- Popup image or content goes here -->
+                  </div>
+                </div>
+
+                <script>
+                    function openPopup(blockId) {
+                      var popupContainer = document.getElementById("PopupModal-" + blockId);
+                      popupContainer.style.display = "block";
+                  }
+
+                  function closePopup(blockId) {
+                      var popupContainer = document.getElementById("PopupModal-" + blockId);
+                      popupContainer.style.display = "none";
+                  }
+                </script>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
