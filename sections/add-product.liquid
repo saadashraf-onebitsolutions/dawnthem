@@ -1,73 +1,554 @@
-<style>
-    .offer {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page custom sections</title>
+  </head>
+  <style>
+    .theridge-witk_v1__container {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       gap: 10px;
+       margin-bottom: 15px;
+       padding: 0;
+     }
 
-  .product-image {
-    max-width: 100px; /* Adjust according to your design */
-    max-height: 100px; /* Adjust according to your design */
-    margin-right: 20px; /* Add space between image and quantity selector */
-  }
+     .theridge-witk_v1__container .theridge-witk_v1__header {
+       text-align: left;
+       font-family: 'Trade Gothic LT Bold';
+       width: 100%;
+       text-transform: uppercase;
+     }
 
-  .quantity-selector {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+     .theridge-witk_v1__wrapper {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       gap: 10px;
+       background: #E0DFDA;
+       width: 100%;
+       padding: 14px 12px;
+       color: #827E6D;
+     }
 
-  .quantity-input {
-    width: 40px; /* Adjust width as needed */
-    text-align: center;
-  }
+     .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr;
+       grid-template-rows: auto;
+       align-items: center;
+       width: 100%;
+       /* Height must be specific for mobile */
 
-  .add-to-cart-btn {
-    padding: 10px 20px; /* Adjust padding */
-    background-color: #ff6600; /* Adjust button color */
-    color: #fff; /* Adjust text color */
-    border: none;
-    cursor: pointer;
-  }
-</style>
+       column-gap: 5px;
+     }
 
-<div id="offer" class="offer">
-  {% if product %}
-    <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image">
-  {% endif %}
-  <div class="quantity-selector">
-    <button class="quantity-decrease">-</button>
-    <input type="number" class="quantity-input" value="1">
-    <button class="quantity-increase">+</button>
-  </div>
-  <button class="add-to-cart-btn">Add to Cart</button>
-</div>
-<script>
-    $(document).ready(function() {
-    // Increase Quantity
-    $('.quantity-increase').click(function() {
-      var input = $(this).siblings('.quantity-input');
-      var newValue = parseInt(input.val()) + 1;
-      input.val(newValue);
-    });
+     .theridge-witk_v1__container .theridge-witk_v1__separator {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .theridge-witk_v1__container .theridge-witk_v1__separator .theridge-witk_v1__separator-icon {
+       width: 7px;
+     }
 
-    // Decrease Quantity
-    $('.quantity-decrease').click(function() {
-      var input = $(this).siblings('.quantity-input');
-      var newValue = parseInt(input.val()) - 1;
-      if (newValue >= 1) {
-        input.val(newValue);
-      }
-    });
+     .theridge-witk_v1__container .theridge-witk_v1__product-card {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       background-color: #D2D0CA;
+       height: auto; /* making this 100% causes mobile bugs */
+       border-radius: 15px 15px 0px 0px;
+       padding: 2px;
+     }
+     .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-img-wrapper {
+       width: auto;
+       display: flex;
+       justify-content: center;
+       align-items: flex-end;
+     }
 
-    // Add to Cart
-    $('.add-to-cart-btn').click(function() {
-      var quantity = $(this).siblings('.quantity-selector').find('.quantity-input').val();
-      // Use Shopify AJAX API to add product to cart
-      // Example: Shopify.addItem(productId, quantity);
-    });
-  });
-</script>
+     .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-img-wrapper img {
+       height: 100%;
+     }
+
+     /* targets both the product title and the message underneath */
+     .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-product-title,
+     .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-message {
+       text-align: center;
+       font-size: min(2.7vw, 13px);
+       font-family: 'Trade Gothic LT Bold';
+       color: #827E6D;
+       text-transform: uppercase;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-product-title {
+       padding: 7px 0 3px 0;
+       background-color: #f3f3f3;
+       width: 100%;
+       min-height: 10vw;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-message {
+       padding: 3px 0;
+       font-family: "Roboto";
+       font-weight: 700;
+     }
+
+
+     #travel-case-product-title {
+       width: 80%;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 5px;
+       border: 2px solid #D2D0CA;
+       width: 100%;
+       background-color: #F3F3F3;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: 0px;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge {
+       display: flex;
+       align-items: center;
+       justify-content: flex-start;
+       width: auto;
+     }
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+       width: 65%;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: flex-start;
+       width: 100%;
+       font-family: 'Trade Gothic LT Bold';
+       margin-bottom: -2px;
+       text-transform: uppercase;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+       font-size: 13px;
+       margin-bottom: -3px;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+       font-size: 10px;
+       width: 100%;
+       font-family: 'Roboto';
+       font-weight: 400;
+     }
+
+     .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+       color: #827E6D;
+       font-family: "Roboto";
+       font-weight: 500;
+       text-decoration-line: underline;
+       text-decoration-color: #827E6D;
+       font-size: 11px;
+       margin-right: 5px;
+       cursor: pointer;
+     }
+
+
+     .theridge-witk_v1__container .theridge-witk_v1__infoIcon {
+       margin: 0 0 3px 5px;
+       cursor: pointer;
+     }
+
+     .theridge-witk_v1__container .theridge-witk_v1__included-message {
+       color: #CF6329;
+     }
+
+     @media(min-width: 360px) {
+       .theridge-witk_v1__container {
+         gap: 5px;
+       }
+
+
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 17px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-product-title {
+         font-size: min(2.9vw, 5vw);
+       }
+       #travel-case-product-title {
+         width: 80px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper,
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-message {
+         font-size: 12px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__infoIcon {
+         width: 11px;
+       }
+
+     }
+
+     @media(min-width: 390px) {
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 18px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         padding: 7px 8px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 75%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message {
+         margin-bottom: -3px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 16px;
+         margin-bottom: -3px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 11px;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 14px;
+         margin-right: 10px;
+       }
+     }
+
+
+     @media(min-width: 423px) {
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 20px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+         column-gap: 8px
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         padding: 7px 8px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 75%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message {
+         margin-bottom: 0px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 17px;
+         margin-bottom: -3px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 11px;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 14px;
+         margin-right: 15px;
+       }
+     }
+
+     @media(min-width: 500px) {
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 23px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+         column-gap: 12px
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-product-title {
+         font-size: min(3vw, 5vw);
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         padding: 11px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 100%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy {
+         gap: 5px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 4vw;
+         margin-bottom: -5px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 2vw;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 3vw;
+         margin-right: 4vw;
+       }
+     }
+
+     @media(min-width: 768px) {
+       .theridge-witk_v1__wrapper {
+         padding: 10px 5px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 17px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+         column-gap: 2px
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-message {
+         font-size: 8px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-product-title {
+         font-size: min(0.8vw, 12px);
+         min-height: min(3vw, 40px);
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         gap: 0px;
+         padding: 5px;
+         justify-content: flex-start;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 65%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy {
+         gap: 0px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 8px;
+         margin-bottom: -2px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 8px;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 7px;
+         margin-right: 0px;
+       }
+     }
+
+     @media(min-width: 850px) {
+       .theridge-witk_v1__wrapper {
+         padding: 10px 6px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 17px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+         column-gap: 5px
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-message {
+         font-size: 8px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         gap: 0px;
+         padding: 5px;
+         justify-content: space-between;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 65%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy {
+         gap: 0px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 10px;
+         margin-bottom: -2px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 9px;
+         margin-top: 3px;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 8px;
+         margin-right: 0px;
+       }
+     }
+
+     @media(min-width: 1000px) {
+       .theridge-witk_v1__wrapper {
+         padding: 10px 6px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 19px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+         column-gap: 5px
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-message {
+         font-size: 8px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         gap: 0px;
+         padding: 5px 0;
+         justify-content: space-between;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge {
+         justify-content: center;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 65%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy {
+         gap: 0px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 12px;
+         margin-bottom: -5px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 9px;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 10px;
+         margin-right: 15px;
+       }
+     }
+
+     @media(min-width: 1200px) {
+       .theridge-witk_v1__wrapper {
+         padding: 12px 8px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__header {
+         font-size: 19px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-wrapper {
+         column-gap: 8px
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__product-card .witk_v1-message {
+         font-size: 12px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper {
+         gap: 2px;
+         padding: 10px 5px;
+         justify-content: space-between;
+       }
+
+
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-badge img {
+         width: 70%;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy {
+         gap: 5px;
+       }
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-text {
+         font-size: 18px;
+         margin-bottom: -3px;
+       }
+
+       .theridge-witk_v1__container .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-copy .theridge-witk_v1__warranty-message .theridge-witk_v1__warranty-included {
+         font-size: 11px;
+         margin-top: 0;
+       }
+
+       .theridge-witk_v1__container  .theridge-witk_v1__warranty-wrapper .theridge-witk_v1__warranty-modal {
+         font-size: 13px;
+         margin-right: 18px;
+       }
+     }
+  </style>
+  <body>
+    <div class="theridge-witk_v1__container">
+      <div class="theridge-witk_v1__header">What's Included?</div>
+      <div class="theridge-witk_v1__wrapper">
+        <div class="theridge-witk_v1__product-wrapper">
+          <div class="theridge-witk_v1__product-card">
+            <div class="witk_v1-message">Included</div>
+            <div class="witk_v1-product-title">24 Karat Gold</div>
+            <div class="witk_v1-img-wrapper">
+              <img
+                src="//ridge.com/cdn/shop/files/RTGD9_MAIN_91621c58-6426-4c4e-a8ee-b75b0f397fb4.jpg?v=1684967438&amp;width=1000"
+                alt="Ridge 8MM Beveled Ring Set - 24 Karat Gold"
+                srcset="//ridge.com/cdn/shop/files/RTGD9_MAIN_91621c58-6426-4c4e-a8ee-b75b0f397fb4.jpg?v=1684967438&amp;width=352 352w, //ridge.com/cdn/shop/files/RTGD9_MAIN_91621c58-6426-4c4e-a8ee-b75b0f397fb4.jpg?v=1684967438&amp;width=832 832w, //ridge.com/cdn/shop/files/RTGD9_MAIN_91621c58-6426-4c4e-a8ee-b75b0f397fb4.jpg?v=1684967438&amp;width=1000 1000w"
+                width="1000"
+                height="1000"
+                class=" ls-is-cached lazyloaded"
+              >
+            </div>
+          </div>
+          <div class="theridge-witk_v1__product-card">
+            <div class="witk_v1-message">Included</div>
+            <div class="witk_v1-product-title">Silicone Band</div>
+            <div class="witk_v1-img-wrapper">
+              <img
+                src="//ridge.com/cdn/shop/files/BlackSiliconeCompanion8mm_MainDetailView_PDP.jpg?v=1699303729&amp;width=1000"
+                alt="thumbnail"
+                srcset="//ridge.com/cdn/shop/files/BlackSiliconeCompanion8mm_MainDetailView_PDP.jpg?v=1699303729&amp;width=352 352w, //ridge.com/cdn/shop/files/BlackSiliconeCompanion8mm_MainDetailView_PDP.jpg?v=1699303729&amp;width=832 832w, //ridge.com/cdn/shop/files/BlackSiliconeCompanion8mm_MainDetailView_PDP.jpg?v=1699303729&amp;width=1000 1000w"
+                width="1000"
+                height="1000"
+                class=" ls-is-cached lazyloaded"
+              >
+            </div>
+          </div>
+          <div class="theridge-witk_v1__product-card">
+            <div class="witk_v1-message">Included</div>
+            <div class="witk_v1-product-title">Ring Case</div>
+            <div class="witk_v1-img-wrapper">
+              <img
+                src="//ridge.com/cdn/shop/products/Rings1_fb598edf-a2b3-4e1b-ba28-545deae4b39e.png?v=1668473632&amp;width=1000"
+                alt="thumbnail"
+                srcset="//ridge.com/cdn/shop/products/Rings1_fb598edf-a2b3-4e1b-ba28-545deae4b39e.png?v=1668473632&amp;width=352 352w, //ridge.com/cdn/shop/products/Rings1_fb598edf-a2b3-4e1b-ba28-545deae4b39e.png?v=1668473632&amp;width=832 832w, //ridge.com/cdn/shop/products/Rings1_fb598edf-a2b3-4e1b-ba28-545deae4b39e.png?v=1668473632&amp;width=1000 1000w"
+                width="1000"
+                height="1000"
+                class=" lazyloaded"
+              >
+            </div>
+          </div>
+        </div>
+        <div class="theridge-witk_v1__warranty-wrapper">
+          <div class="theridge-witk_v1__warranty-copy">
+            <div class="theridge-witk_v1__warranty-badge">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0613/6213/files/Group_439.svg?v=1696969829"
+                alt="Lifetime Guarantee Badge"
+              >
+            </div>
+            <div class="theridge-witk_v1__warranty-message">
+              <div class="theridge-witk_v1__warranty-text">FREE REPLACEMENTS</div>
+              <div class="theridge-witk_v1__warranty-included">INCLUDED</div>
+            </div>
+          </div>
+          <div class="theridge-witk_v1__warranty-modal">Learn More</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
 {% schema %}
 {
   "name": "Add Product",
