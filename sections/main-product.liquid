@@ -482,14 +482,6 @@
                   <a href="{{ page_url }}" class="product-popup-modal__button link ">{{ link_text }}</a>
                 </div>
 
-                <script>
-                  // Function to open popup
-                  function openPopup(blockId) {
-                    var popupContainer = document.getElementById("PopupModal-" + blockId);
-                    popupContainer.style.display = "block";
-                  }
-                </script>
-
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
               {%- when 'collapsible_tab' -%}
