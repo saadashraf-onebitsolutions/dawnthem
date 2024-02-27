@@ -1,38 +1,57 @@
 <style>
-   /* Style for popup container */
-    /* Style for popup image container */
-  .popup-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-  }
+     /* Style for popup container */
+      /* Style for popup image container */
+    .popup-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+    }
 
-  /* Style for popup image */
-  .popup-image {
-    display: block;
-    margin: auto;
-    max-width: 80%;
-    max-height: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    /* Style for popup image */
+    .popup-image {
+      display: block;
+      margin: auto;
+      max-width: 80%;
+      max-height: 80%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-  /* Style for close button */
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 20px;
-    z-index: 10000;
+    /* Style for close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      z-index: 10000;
+    }
+    @media only screen and (max-width: 767px) {
+    .popup-content {
+      max-width: calc(100% - 20px);
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      overflow: auto;
+      max-height: calc(100% - 20px);
+      margin-top: -50px; /* Adjust as needed */
+      margin-left: -50%; /* Center horizontally */
+      left: 50%;
+      top: 50%;
+      transform: none;
+      position: fixed;
+      background-color: #fff;
+      z-index: 9999;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
   }
 </style>
 
