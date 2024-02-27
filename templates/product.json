@@ -3,15 +3,15 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
         "sku_DpJkBk": {
           "type": "sku",
           "settings": {
             "text_style": "body"
-          }
-        },
-        "title": {
-          "type": "title",
-          "settings": {
           }
         },
         "price": {
@@ -79,8 +79,8 @@
         }
       },
       "block_order": [
-        "sku_DpJkBk",
         "title",
+        "sku_DpJkBk",
         "price",
         "variant_picker",
         "buy_buttons",
