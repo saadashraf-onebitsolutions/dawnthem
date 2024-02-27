@@ -100,10 +100,16 @@
         "share",
         "popup_qwpCBq"
       ],
+      "custom_css": [
+        ".ymq-option-title {font-size: 16px; }",
+        ".price-item{font-size:23px; font-weight:600;}",
+        ".price--on-sale .price-item--regular {font-size: 0; display: flex;}",
+        "@media screen and (min-width: 750px) {.section-template--22089304834349__main-padding {margin-right: -15rem;}"
+      ],
       "settings": {
         "enable_sticky_info": true,
         "color_scheme": "",
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
         "gallery_layout": "stacked",
