@@ -1,68 +1,59 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Button Popup Image</title>
-    <style>
-      /* Style for popup container */
-      .popup-container {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 9999;
-      }
+<style>
+    /* Style for popup container */
+    .popup-container {
+     position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 2147483646;
+  display: none;
+  top: 0;
+  left: 0;
+  background: rgba(00, 00, 00, .5);
+    }
 
-      /* Style for popup image */
-      .popup-image {
-        display: block;
-        margin: auto;
-        width: 450px;
-        height: 450px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
+    /* Style for popup image */
+    .popup-image {
+      display: block;
+      margin: auto;
+      width: 450px;
+      height: 450px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
-      /* Style for close button */
-      .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
-        color: #fff;
-        font-size: 20px;
-        z-index: 10000;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Button to trigger popup image -->
-    <button onclick="openPopup()">Open Popup Image</button>
+    /* Style for close button */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      z-index: 10000;
+    }
+</style>
 
-    <!-- Popup container -->
-    <div class="popup-container" id="popupContainer" onclick="closePopup()">
-      <!-- Popup image -->
-      <img src="path_to_your_image.jpg" alt="Popup Image" class="popup-image">
-      <!-- Close button -->
-      <span class="close-btn">&times;</span>
-    </div>
+<!-- Button to trigger popup image -->
+<button onclick="openPopup()">Open Popup Image</button>
 
-    <script>
-      // Function to open popup
-      function openPopup() {
-        document.getElementById("popupContainer").style.display = "block";
-      }
+<!-- Popup container -->
+<div class="popup-container" id="popupContainer" onclick="closePopup()">
+  <!-- Popup image -->
+  <img src="path_to_your_image.jpg" alt="Popup Image" class="popup-image">
+  <!-- Close button -->
+  <span class="close-btn">&times;</span>
+</div>
 
-      // Function to close popup
-      function closePopup() {
-        document.getElementById("popupContainer").style.display = "none";
-      }
-    </script>
-  </body>
-</html>
+<script>
+  // Function to open popup
+  function openPopup() {
+    document.getElementById("popupContainer").style.display = "block";
+  }
+
+  // Function to close popup
+  function closePopup() {
+    document.getElementById("popupContainer").style.display = "none";
+  }
+</script>
