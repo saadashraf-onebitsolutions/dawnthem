@@ -35,30 +35,6 @@
             "text4": "<p style=\"text-align:center;font-size:12px;margin-top:0px;\"> <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0680\/0516\/7405\/files\/shippingicondesktop_02448f1a-cc38-452e-8e23-57384e56d248.webp?v=1708712071\" style=\"width:16px;height:12px;\"> <strong>Ships from Dallas within 24 Hours<\/strong><\/p>"
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
-        "complementary_4xeifw": {
-          "type": "complementary",
-          "settings": {
-            "block_heading": "Pairs well with",
-            "make_collapsible_row": true,
-            "icon": "price_tag",
-            "product_list_limit": 10,
-            "products_per_page": 3,
-            "pagination_style": "counter",
-            "image_ratio": "square",
-            "enable_quick_add": true
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
         "popup_qwpCBq": {
           "type": "popup",
           "settings": {
@@ -74,6 +50,38 @@
             "headingtext44": "FREE REPLACEMENT",
             "imgheadingtext44": "INCLUDED"
           }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "collapsible_tab_Mibz3U": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Features",
+            "icon": "none",
+            "content": "<p><strong>Permaplug Charger:<\/strong> Our charger features one USB and one USB-C slot, making it compatible with a wide range of devices. Its sleek and durable design ensures long-lasting use.<\/p><p><br\/><strong>Permaplug Outlet Cover:<\/strong> This cover is specially designed to work with the Permaplug Charger, providing a secure and stable connection. It's easy to install and fits standard outlets in the USA, Mexico, and Canada (Europe Coming Soon).<br\/><br\/><strong>Permaplug Charging Cable:<\/strong> For an even more snug and secure fit, we include one Permaplug Charging Cable. It's specially designed to work with the Permaplug Charger and Outlet Cover, ensuring a reliable connection.<\/p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_8jMQiP": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "<ol><li>Begin by removing the existing outlet cover from your wall.<\/li><li>Take the Permaplug Charger and plug it into the upper power outlet. Ensure it is firmly inserted.<\/li><li>Connect your devices to the Permaplug Charger using the Permaplug Charging Cable(s). Make sure the connections are secure.<\/li><li>Take the Permaplug Outlet Cover and position it directly over the charger and cable(s). Align it with the screw holes on the wall.<\/li><li>Use the provided screws to secure the Permaplug Outlet Cover in place. Tighten them until the cover is firmly attached to the wall.<\/li><\/ol>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_qqtEj8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping & Warranty",
+            "icon": "none",
+            "content": "<p>We are currently offering FREE Priority shipping on orders of $35 or more* (exclusions apply).<\/p><p>Permaplug is packaged and shipped from our office in Dallas, Texas.<\/p><p><strong>30-DAY NO HASSLE REFUNDS AND RETURNS<\/strong><\/p><p>If Permaplug isn't for you, we make refunds and returns quick, easy, and free to initiate. To contact us, email support@permaplug.com.<\/p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -82,10 +90,11 @@
         "price",
         "variant_picker",
         "buy_buttons",
+        "popup_qwpCBq",
         "description",
-        "complementary_4xeifw",
-        "share",
-        "popup_qwpCBq"
+        "collapsible_tab_Mibz3U",
+        "collapsible_tab_8jMQiP",
+        "collapsible_tab_qqtEj8"
       ],
       "custom_css": [
         ".ymq-option-title {font-size: 16px;}",
@@ -106,16 +115,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "quick_order_list_ff6Cry": {
-      "type": "quick-order-list",
-      "settings": {
-        "show_image": true,
-        "show_sku": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "related-products": {
@@ -139,7 +138,6 @@
   },
   "order": [
     "main",
-    "quick_order_list_ff6Cry",
     "related-products"
   ]
 }
