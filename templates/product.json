@@ -92,8 +92,7 @@
       "custom_css": [
         ".ymq-option-title {font-size: 16px;}",
         ".price-item {font-size: 23px; font-weight: 600;}",
-        ".price--on-sale .price-item--regular {font-size: 0; display: flex;}",
-        "@media screen and (min-width: 2300px) and (max-width: 5000px) {.section-template--22200621007136__main-padding {margin-left: 32rem; }}"
+        ".price--on-sale .price-item--regular {font-size: 0; display: flex;}"
       ],
       "settings": {
         "enable_sticky_info": true,
