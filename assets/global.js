@@ -973,11 +973,14 @@ class VariantSelects extends HTMLElement {
       this.updateVariantDetails();
     }
   }
- updateVariantDetails(){
-   //select element
-  const selectVariantimage = document.querySelector(`#variant-deatails`);
-selectVariantimage.innerHTMl="<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">"
- }
+ function updateVariantDetails() {
+  // Selecting the element
+  const selectVariantImage = document.querySelector('#variant-details');
+  
+  // Updating inner HTML with an image
+  selectVariantImage.innerHTML = '<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/2_4cb5cdf9-3435-451d-9cd9-752383a2c31b.png?v=1708516602">';
+}
+
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
       if (element.tagName === 'SELECT') {
