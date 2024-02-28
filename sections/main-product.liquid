@@ -712,75 +712,77 @@
                   {%- endif -%}
                 </div>
               {%- when 'popup' -%}
-                {% assign heading1 = block.settings.heading11 %}
-                {% assign headingtext1 = block.settings.headingtext11 %}
-                {% assign headingtext2 = block.settings.headingtext22 %}
-                {% assign headingtext3 = block.settings.headingtext33 %}
-                {% assign headingtext4 = block.settings.headingtext44 %}
+                <div class="variant-details">
+                  {% assign heading1 = block.settings.heading11 %}
+                  {% assign headingtext1 = block.settings.headingtext11 %}
+                  {% assign headingtext2 = block.settings.headingtext22 %}
+                  {% assign headingtext3 = block.settings.headingtext33 %}
+                  {% assign headingtext4 = block.settings.headingtext44 %}
 
-                {% assign imgheadingtext1 = block.settings.imgheadingtext11 %}
-                {% assign imgheadingtext2 = block.settings.imgheadingtext22 %}
-                {% assign imgheadingtext3 = block.settings.imgheadingtext33 %}
-                {% assign imgheadingtext4 = block.settings.imgheadingtext44 %}
+                  {% assign imgheadingtext1 = block.settings.imgheadingtext11 %}
+                  {% assign imgheadingtext2 = block.settings.imgheadingtext22 %}
+                  {% assign imgheadingtext3 = block.settings.imgheadingtext33 %}
+                  {% assign imgheadingtext4 = block.settings.imgheadingtext44 %}
 
-                <div id="container">
-                  <div id="heading">
-                    <p style="font-size: 20px;">
-                      <strong>{{ heading1 }}</strong>
-                    </p>
-                  </div>
-                  <div id="cont">
-                    <div id="container1">
-                      <div id="title1">
-                        <p>{{ headingtext1 }}</p>
-                        <div id="title-img1">
-                          <p>{{ imgheadingtext1 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">
-                        </div>
-                      </div>
-                      <div id="title2">
-                        <p>{{ headingtext2 }}</p>
-                        <div id="title-img2">
-                          <p>{{ imgheadingtext2 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/2_4cb5cdf9-3435-451d-9cd9-752383a2c31b.png?v=1708516602">
-                        </div>
-                      </div>
-                      <div id="title3">
-                        <p>{{ headingtext3 }}</p>
-                        <div id="title-img3">
-                          <p>{{ imgheadingtext3 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/3_fb4227ef-0bf1-40de-8269-0b1cca981d12.png?v=1708516602">
-                        </div>
-                      </div>
+                  <div id="container">
+                    <div id="heading">
+                      <p style="font-size: 20px;">
+                        <strong>{{ heading1 }}</strong>
+                      </p>
                     </div>
-                    <div id="container2">
-                      <div id="info">
-                        <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Group_439_609c46ec-c980-4020-8bc9-d607262c3872.svg?v=1708261807">
-                        <div id="head-text">
-                          <p style="color: #8F8876; margin-bottom: -5px;">
-                            <strong>{{ headingtext4 }}</strong>
-                          </p>
-                          <p style="color: #8F8876; font-size: 12px; margin-top: -11px; font-weight: 50;">
-                            {{ imgheadingtext4 }}
-                          </p>
+                    <div id="cont">
+                      <div id="container1">
+                        <div id="title1">
+                          <p>{{ headingtext1 }}</p>
+                          <div id="title-img1">
+                            <p>{{ imgheadingtext1 }}</p>
+                            <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">
+                          </div>
                         </div>
-                        <modal-opener
-                          class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-                          data-modal="#PopupModal-{{ block.id }}"
-                          {{ block.shopify_attributes }}
-                        >
-                          <button
-                            id="ProductPopup-{{ block.id }}"
-                            class="product-popup-modal__button link"
-                            type="button"
-                            aria-haspopup="dialog"
+                        <div id="title2">
+                          <p>{{ headingtext2 }}</p>
+                          <div id="title-img2">
+                            <p>{{ imgheadingtext2 }}</p>
+                            <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/2_4cb5cdf9-3435-451d-9cd9-752383a2c31b.png?v=1708516602">
+                          </div>
+                        </div>
+                        <div id="title3">
+                          <p>{{ headingtext3 }}</p>
+                          <div id="title-img3">
+                            <p>{{ imgheadingtext3 }}</p>
+                            <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/3_fb4227ef-0bf1-40de-8269-0b1cca981d12.png?v=1708516602">
+                          </div>
+                        </div>
+                      </div>
+                      <div id="container2">
+                        <div id="info">
+                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Group_439_609c46ec-c980-4020-8bc9-d607262c3872.svg?v=1708261807">
+                          <div id="head-text">
+                            <p style="color: #8F8876; margin-bottom: -5px;">
+                              <strong>{{ headingtext4 }}</strong>
+                            </p>
+                            <p style="color: #8F8876; font-size: 12px; margin-top: -11px; font-weight: 50;">
+                              {{ imgheadingtext4 }}
+                            </p>
+                          </div>
+                          <modal-opener
+                            class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+                            data-modal="#PopupModal-{{ block.id }}"
+                            {{ block.shopify_attributes }}
                           >
-                            {{ block.settings.text | default: block.settings.page.title }}
-                          </button>
-                        </modal-opener>
-                        <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
-                          {{- block.settings.text -}}
-                        </a>
+                            <button
+                              id="ProductPopup-{{ block.id }}"
+                              class="product-popup-modal__button link"
+                              type="button"
+                              aria-haspopup="dialog"
+                            >
+                              {{ block.settings.text | default: block.settings.page.title }}
+                            </button>
+                          </modal-opener>
+                          <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
+                            {{- block.settings.text -}}
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
