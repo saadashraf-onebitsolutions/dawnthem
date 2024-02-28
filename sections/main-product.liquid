@@ -731,26 +731,35 @@
                   </div>
                   <div id="cont">
                     <div id="container1">
+                      <!-- Adjust swatch values and image URLs accordingly -->
                       <div id="title1">
                         <p>{{ headingtext1 }}</p>
                         <div id="title-img1">
                           <p>{{ imgheadingtext1 }}</p>
-
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">
+                          <img
+                            src="{{ block.settings.swatch1_image_url }}"
+                            data-swatch-value="{{ block.settings.swatch1_value }}"
+                          >
                         </div>
                       </div>
                       <div id="title2">
                         <p>{{ headingtext2 }}</p>
                         <div id="title-img2">
                           <p>{{ imgheadingtext2 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/2_4cb5cdf9-3435-451d-9cd9-752383a2c31b.png?v=1708516602">
+                          <img
+                            src="{{ block.settings.swatch2_image_url }}"
+                            data-swatch-value="{{ block.settings.swatch2_value }}"
+                          >
                         </div>
                       </div>
                       <div id="title3">
                         <p>{{ headingtext3 }}</p>
                         <div id="title-img3">
                           <p>{{ imgheadingtext3 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/3_fb4227ef-0bf1-40de-8269-0b1cca981d12.png?v=1708516602">
+                          <img
+                            src="{{ block.settings.swatch3_image_url }}"
+                            data-swatch-value="{{ block.settings.swatch3_value }}"
+                          >
                         </div>
                       </div>
                     </div>
