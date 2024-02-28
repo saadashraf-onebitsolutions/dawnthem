@@ -971,10 +971,9 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
       this.updateVariantDetails();
-      console.log("variant is changed by you");
     }
   }
- this.updateVariantDetails(){
+ updateVariantDetails(){
    //select element
   const selectVariantimage = document.querySelector(`#variant-deatails`);
 selectVariantimage.innerHTMl="<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">"
