@@ -949,7 +949,7 @@ customElements.define('slideshow-component', SlideshowComponent);
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener('change', this.onVariantChange);
+    this.addEventListener('change', this.onVariantChange.bind(this)); // Binding the event listener
   }
 
   onVariantChange(event) {
@@ -961,6 +961,7 @@ class VariantSelects extends HTMLElement {
     this.removeErrorMessage();
     this.updateVariantStatuses();
 
+
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -970,17 +971,23 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
-      this.updateVariantDetails();
+          this.updateProductTitle();
+
     }
   }
- function updateVariantDetails() {
-  // Selecting the element
-  const selectVariantImage = document.querySelector('#variant-details');
-  
-  // Updating inner HTML with an image
-  selectVariantImage.innerHTML = '<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/2_4cb5cdf9-3435-451d-9cd9-752383a2c31b.png?v=1708516602">';
+ 
+updateProductTitle() {
+    const productTitleElement = document.querySelector('.product-title'); // Assuming there's an element with class 'product-title' for the product title
+    if (!productTitleElement || !this.currentVariant) return;
+
+    // Update the product title based on the selected variant
+    productTitleElement.innerText = this.currentVariant.title; // Assuming the selected variant object has a property 'title' containing the title of the product
+  }
+
+  // Existing code...
 }
 
+customElements.define('variant-selects', VariantSelects);
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
       if (element.tagName === 'SELECT') {
