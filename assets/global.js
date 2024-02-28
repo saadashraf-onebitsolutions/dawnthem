@@ -949,7 +949,7 @@ customElements.define('slideshow-component', SlideshowComponent);
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener('change', this.onVariantChange.bind(this)); // Binding the event listener
+    this.addEventListener('change', this.onVariantChange);
   }
 
   onVariantChange(event) {
@@ -961,7 +961,6 @@ class VariantSelects extends HTMLElement {
     this.removeErrorMessage();
     this.updateVariantStatuses();
 
-
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
       this.setUnavailable();
@@ -971,23 +970,10 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
-          this.updateProductTitle();
-
     }
   }
  
-updateProductTitle() {
-    const productTitleElement = document.querySelector('.product-title'); // Assuming there's an element with class 'product-title' for the product title
-    if (!productTitleElement || !this.currentVariant) return;
 
-    // Update the product title based on the selected variant
-    productTitleElement.innerText = this.currentVariant.title; // Assuming the selected variant object has a property 'title' containing the title of the product
-  }
-
-  // Existing code...
-}
-
-customElements.define('variant-selects', VariantSelects);
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
       if (element.tagName === 'SELECT') {
