@@ -970,6 +970,7 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+      console.log("variant is changed by you")
     }
   }
 
