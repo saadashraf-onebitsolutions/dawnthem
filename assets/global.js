@@ -976,8 +976,8 @@ class VariantSelects extends HTMLElement {
   }
  this.updateVariantDetails(){
    //select element
-  const selectVariantimage = document.querySelector("#variant-deatails");
-selectVariants image.innerHTMl="<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">"
+  const selectVariantimage = document.querySelector(`#variant-deatails`);
+selectVariantsimage.innerHTMl="<img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">"
  }
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
