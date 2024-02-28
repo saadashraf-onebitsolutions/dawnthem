@@ -970,10 +970,14 @@ class VariantSelects extends HTMLElement {
       this.updateVariantInput();
       this.renderProductInfo();
       this.updateShareUrl();
+      this.updateVariantDetails();
       console.log("variant is changed by you");
     }
   }
-
+ this.updateVariantDetails(){
+   //select element
+  const selectVariantimage = document.querySelector("#variant-deatails");
+ }
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
       if (element.tagName === 'SELECT') {
