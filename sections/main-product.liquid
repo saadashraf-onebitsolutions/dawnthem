@@ -722,6 +722,10 @@
                 {% assign imgheadingtext2 = block.settings.imgheadingtext22 %}
                 {% assign imgheadingtext3 = block.settings.imgheadingtext33 %}
                 {% assign imgheadingtext4 = block.settings.imgheadingtext44 %}
+                {% assign image_url1 = block.settings.image1 %}
+                {% assign image_url2 = block.settings.image2 %}
+                {% assign image_url3 = block.settings.image3 %}
+                {% assign image_url4 = block.settings.image4 %}
 
                 <div id="container">
                   <div id="heading">
@@ -735,27 +739,27 @@
                         <p>{{ headingtext1 }}</p>
                         <div id="title-img1">
                           <p>{{ imgheadingtext1 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/1_b7f778f8-c5f3-4e9b-b2c3-5de37bab6217.png?v=1708516602">
+                          <img src="{{ image_url1 | img_url: '300x' }}" alt="Image 1">
                         </div>
                       </div>
                       <div id="title2">
                         <p>{{ headingtext2 }}</p>
                         <div id="title-img2">
                           <p>{{ imgheadingtext2 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/2_4cb5cdf9-3435-451d-9cd9-752383a2c31b.png?v=1708516602">
+                          <img src="{{ image_url2 | img_url: '300x' }}" alt="Image 1">
                         </div>
                       </div>
                       <div id="title3">
                         <p>{{ headingtext3 }}</p>
                         <div id="title-img3">
                           <p>{{ imgheadingtext3 }}</p>
-                          <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/3_fb4227ef-0bf1-40de-8269-0b1cca981d12.png?v=1708516602">
+                          <img src="{{ image_url3 | img_url: '300x' }}" alt="Image 1">
                         </div>
                       </div>
                     </div>
                     <div id="container2">
                       <div id="info">
-                        <img src="https://cdn.shopify.com/s/files/1/0680/0516/7405/files/Group_439_609c46ec-c980-4020-8bc9-d607262c3872.svg?v=1708261807">
+                        <img src="{{ image_url4 | img_url: '300x' }}" alt="Image 1">
                         <div id="head-text">
                           <p style="color: #8F8876; margin-bottom: -5px;">
                             <strong>{{ headingtext4 }}</strong>
