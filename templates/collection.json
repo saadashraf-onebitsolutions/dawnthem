@@ -83,25 +83,39 @@
         "image_xkXFiW"
       ],
       "settings": {
-        "feature_title_color": "#000",
+        "feature_title_color": "#000000",
         "feature_title_font_size": 16,
         "feature_title_font_mob_size": 16,
-        "feature_text_color": "#4B4B4B",
+        "feature_text_color": "#4b4b4b",
         "feature_text_font_size": 14,
         "feature_text_font_mob_size": 14,
         "use_custom_font": false,
         "type_header_font": "assistant_n4",
-        "section_bg_color": "#fff",
+        "section_bg_color": "#ffffff",
         "row_on_mobile": false,
         "max_container_width": 120,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "sub_catogory_e6xH3e": {
+      "type": "sub-catogory",
+      "settings": {
+        "image1url": "shopify:\/\/collections",
+        "image1": "shopify:\/\/shop_images\/3_1800x1800_9ce88ff8-fe9b-4122-a6f4-f3bedd1586e8.webp",
+        "image2url": "shopify:\/\/collections\/bundle-products",
+        "image2": "shopify:\/\/shop_images\/1_1800x1800_076eee52-152b-48ed-9c15-1538019eb1f6.webp",
+        "image3url": "shopify:\/\/pages\/contact",
+        "image3": "shopify:\/\/shop_images\/1_1800x1800_eb6abce5-72ca-49d2-89d3-c2bd8ce5d173.webp",
+        "image4url": "shopify:\/\/products\/basic-maroon-turtle-mock-neck",
+        "image4": "shopify:\/\/shop_images\/2_1800x1800_84d84313-2022-43c1-af8d-794adce06ea9.webp"
       }
     }
   },
   "order": [
     "banner",
     "product-grid",
-    "ss_feature_1_aYar3f"
+    "ss_feature_1_aYar3f",
+    "sub_catogory_e6xH3e"
   ]
 }
