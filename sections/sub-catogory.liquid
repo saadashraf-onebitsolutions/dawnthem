@@ -16,6 +16,7 @@
     border-radius: 50%;
     overflow: hidden;
     position: relative;
+    cursor: pointer; /* Change cursor to pointer */
   }
   #sub-catogory img {
     width: 100%;
@@ -36,22 +37,22 @@
 </style>
 
 <div id="sub-catogory">
-  <div id="img1">
+  <div id="img1" onclick="window.open('{{ section.settings.image1url }}', '_blank')">
     <a href="{{ section.settings.image1url }}">
       <img src="{{ image1 | img_url: '300x' }}" alt="Image 1">
     </a>
   </div>
-  <div id="img2">
+  <div id="img2" onclick="window.open('{{ section.settings.image2url }}', '_blank')">
     <a href="{{ section.settings.image2url }}">
       <img src="{{ image2 | img_url: '300x' }}" alt="Image 2">
     </a>
   </div>
-  <div id="img3">
+  <div id="img3" onclick="window.open('{{ section.settings.image3url }}', '_blank')">
     <a href="{{ section.settings.image3url }}">
       <img src="{{ image3 | img_url: '300x' }}" alt="Image 3">
     </a>
   </div>
-  <div id="img4">
+  <div id="img4" onclick="window.open('{{ section.settings.image4url }}', '_blank')">
     <a href="{{ section.settings.image4url }}">
       <img src="{{ image4 | img_url: '300x' }}" alt="Image 4">
     </a>
