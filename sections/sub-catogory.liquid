@@ -16,10 +16,6 @@
     border-radius: 50%;
     overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
   }
   #sub-catogory img {
     width: 100%;
@@ -43,46 +39,24 @@
   <div id="img1">
     <a href="{{ section.settings.image1url }}">
       <img src="{{ image1 | img_url: '300x' }}" alt="Image 1">
-      <p class="page-title" data-url="{{ section.settings.image1url }}"></p>
     </a>
   </div>
   <div id="img2">
     <a href="{{ section.settings.image2url }}">
       <img src="{{ image2 | img_url: '300x' }}" alt="Image 2">
-      <p class="page-title" data-url="{{ section.settings.image2url }}"></p>
     </a>
   </div>
   <div id="img3">
     <a href="{{ section.settings.image3url }}">
       <img src="{{ image3 | img_url: '300x' }}" alt="Image 3">
-      <p class="page-title" data-url="{{ section.settings.image3url }}"></p>
     </a>
   </div>
   <div id="img4">
     <a href="{{ section.settings.image4url }}">
       <img src="{{ image4 | img_url: '300x' }}" alt="Image 4">
-      <p class="page-title" data-url="{{ section.settings.image4url }}"></p>
     </a>
   </div>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var pageTitles = document.querySelectorAll(".page-title");
-    pageTitles.forEach(function(titleElement) {
-      var pageUrl = titleElement.dataset.url;
-      fetch(pageUrl)
-        .then(response => response.text())
-        .then(html => {
-          var parser = new DOMParser();
-          var doc = parser.parseFromString(html, "text/html");
-          var title = doc.querySelector("title").innerText;
-          titleElement.innerText = title;
-        })
-        .catch(error => console.error("Error fetching page title:", error));
-    });
-  });
-</script>
 
 {% schema %}
 {
