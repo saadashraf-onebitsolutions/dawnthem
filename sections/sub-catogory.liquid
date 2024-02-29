@@ -1,6 +1,82 @@
+{% assign image1 = section.settings.image1 %}
+{% assign image2 = section.settings.image2 %}
+{% assign image3 = section.settings.image3 %}
+{% assign image4 = section.settings.image4 %}
+
+{% assign image1 = section.settings.image1url %}
+{% assign image2 = section.settings.image2url %}
+{% assign image3 = section.settings.image3url %}
+{% assign image4 = section.settings.image4url %}
+<div id="sub-catogory">
+  <div id="img1">
+    <a href="{{ image1 }}">
+      <img src="{{ image1 | img_url: '300x' }}" alt="Image 1">
+    </a>
+  </div>
+  <div id="img2">
+    <a href="{{ image2 }}">
+      <img src="{{ image2 | img_url: '300x' }}" alt="Image 1">
+    </a>
+  </div>
+  <div id="img3">
+    <a href="{{ image3 }}">
+      <img src="{{ image3 | img_url: '300x' }}" alt="Image 1">
+    </a>
+  </div>
+  <div id="img4">
+    <a href="{{ image4 }}">
+      <img src="{{ image4 | img_url: '300x' }}" alt="Image 1">
+    </a>
+  </div>
+</div>
 {% schema %}
   {
-    "name": "Section name",
-    "settings": []
-  }
+     "name": "Sub Catogory",
+  "tag": "section",
+    "settings": [
+      {
+          "type": "url",
+          "id": "image1url",
+          "label": "URL image1"
+        },
+       {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "image1"
+        },{
+          "type": "url",
+          "id": "image2url",
+          "label": "URL image2"
+        },
+       {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "image2"
+        },{
+          "type": "url",
+          "id": "image3url",
+          "label": "URL image3"
+        },
+      {
+          "type": "image_picker",
+          "id": "image3",
+          "label": "image3"
+        },{
+          "type": "url",
+          "id": "image4url",
+          "label": "URL image4"
+        },
+    {
+          "type": "image_picker",
+          "id": "image4",
+          "label": "image4"
+        }
+
+    ],
+  "presets": [
+    {
+      "name": "Sub Catogory"
+    }
+  ]
+}
 {% endschema %}
