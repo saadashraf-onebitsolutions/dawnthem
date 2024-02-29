@@ -3,6 +3,38 @@
 {% assign image3 = section.settings.image3 %}
 {% assign image4 = section.settings.image4 %}
 
+<style>
+  #sub-catogory {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #sub-catogory div {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+  }
+  #sub-catogory img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #sub-catogory div:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000; /* Change border color as needed */
+    border-radius: 50%;
+    box-sizing: border-box;
+  }
+</style>
+
 <div id="sub-catogory">
   <div id="img1">
     <a href="{{ section.settings.image1url }}">
