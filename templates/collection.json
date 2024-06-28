@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "sections": {
     "banner": {
@@ -110,12 +119,18 @@
         "image4url": "shopify:\/\/products\/basic-maroon-turtle-mock-neck",
         "image4": "shopify:\/\/shop_images\/2_1800x1800_84d84313-2022-43c1-af8d-794adce06ea9.webp"
       }
+    },
+    "pagefly-collection-section": {
+      "type": "pagefly-collection-section",
+      "settings": {
+      }
     }
   },
   "order": [
     "banner",
     "product-grid",
     "ss_feature_1_aYar3f",
-    "sub_catogory_e6xH3e"
+    "sub_catogory_e6xH3e",
+    "pagefly-collection-section"
   ]
 }
